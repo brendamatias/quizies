@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import COLORS from '../../constants/theme';
 
 export const CardList = styled.FlatList`
   margin-top: 30px;
@@ -38,7 +39,7 @@ export const CircleText = styled.Text`
 `;
 
 export const Title = styled.Text`
-  color: #000000;
+  color: ${COLORS.black};
   font-weight: bold;
   font-size: 18px;
 `;

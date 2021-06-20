@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import COLORS from '../../../constants/theme';
 
 export const Container = styled.View`
   flex-direction: row;
@@ -7,7 +8,7 @@ export const Container = styled.View`
 
 export const CardItem = styled.View`
   align-items: center;
-  background-color: #fff;
+  background-color: ${COLORS.white};
   flex-grow: 1;
   margin: 4px;
   border-radius: 8px;

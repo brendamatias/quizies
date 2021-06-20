@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
+import COLORS from '../../constants/theme';
 
 export const WrapButton = styled.TouchableOpacity`
-  background-color: #fa6400;
+  background-color: ${COLORS.primary};
   width: 150px;
   padding: 16px 0;
   justify-content: center;
@@ -10,6 +11,6 @@ export const WrapButton = styled.TouchableOpacity`
 `;
 
 export const TextButton = styled.Text`
-  color: #ffffff;
+  color: ${COLORS.white};
   font-size: 14px;
 `;

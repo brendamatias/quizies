@@ -14,7 +14,11 @@ import QuizzesList from '../../components/QuizzesList';
 import CardsHeader from './CardsHeader';
 import series from '../../data/SeriesData';
 
-const Dashboard: React.FC = () => {
+type Props = {
+  navigation: object;
+};
+
+const Dashboard: React.FC<Props> = ({ navigation }: Props) => {
   return (
     <Container>
       <Profile>
@@ -34,7 +38,7 @@ const Dashboard: React.FC = () => {
         />
       </QuizzesHeader>
 
-      <QuizzesList series={series} />
+      <QuizzesList navigation={navigation} series={series} />
     </Container>
   );
 };

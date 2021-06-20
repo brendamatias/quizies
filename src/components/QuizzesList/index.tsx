@@ -24,6 +24,7 @@ interface ISerie {
 
 type Props = {
   series: ISerie[];
+  navigation: any;
 };
 
 const QuizzesList: React.FC<Props> = ({ navigation, series }: Props) => {
