@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 
 import COLORS from '../../../constants/theme';
 import { Container, ButtonOption } from './styles';

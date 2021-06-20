@@ -1,11 +1,15 @@
 import styled from 'styled-components/native';
 import COLORS from '../../../constants/theme';
 
+interface IButtonOption {
+  backgroundColor: string;
+}
+
 export const Container = styled.View`
   margin-top: 30px;
 `;
 
-export const ButtonOption = styled.TouchableOpacity`
+export const ButtonOption = styled.TouchableOpacity<IButtonOption>`
   border-width: 1px;
   border-color: ${COLORS.secondary};
   background-color: ${props => props.backgroundColor};

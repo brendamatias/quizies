@@ -58,7 +58,7 @@ const TabsScreen = () => (
       component={HomeStackScreen}
       options={{
         tabBarLabel: 'Dashboard',
-        tabBarIcon: ({ color, size }) => (
+        tabBarIcon: ({ color, size }: { color: string; size: number }) => (
           <Icon name="home" size={size} color={color} />
         ),
       }}
@@ -68,7 +68,7 @@ const TabsScreen = () => (
       component={Ranking}
       options={{
         tabBarLabel: 'Ranking',
-        tabBarIcon: ({ color, size }) => (
+        tabBarIcon: ({ color, size }: { color: string; size: number }) => (
           <Icon name="trophy" size={size} color={color} />
         ),
       }}
@@ -78,7 +78,7 @@ const TabsScreen = () => (
       component={Quizzes}
       options={{
         tabBarLabel: 'Quizzes',
-        tabBarIcon: ({ color, size }) => (
+        tabBarIcon: ({ color, size }: { color: string; size: number }) => (
           <Icon name="th-list" size={size} color={color} />
         ),
       }}

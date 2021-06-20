@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Alert } from 'react-native';
+import { NavigatorScreenParams } from '@react-navigation/native';
 import {
   Container,
   Profile,
@@ -14,9 +15,9 @@ import QuizzesList from '../../components/QuizzesList';
 import CardsHeader from './CardsHeader';
 import series from '../../data/SeriesData';
 
-type Props = {
-  navigation: object;
-};
+interface Props {
+  navigation: NavigatorScreenParams<null>;
+}
 
 const Dashboard: React.FC<Props> = ({ navigation }: Props) => {
   return (

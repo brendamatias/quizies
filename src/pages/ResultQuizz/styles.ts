@@ -1,6 +1,11 @@
 import styled from 'styled-components/native';
 import COLORS from '../../constants/theme';
 
+interface ISubTitle {
+  fontSize: number;
+  margin?: string;
+}
+
 export const Container = styled.View`
   flex: 1;
   justify-content: center;
@@ -38,7 +43,7 @@ export const Title = styled.Text`
   color: ${COLORS.white};
 `;
 
-export const SubTitle = styled.Text`
+export const SubTitle = styled.Text<ISubTitle>`
   font-size: ${props => `${props.fontSize}px`};
   margin: ${props => (props.margin ? props.margin : '0px')};
   font-weight: bold;

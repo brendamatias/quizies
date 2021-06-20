@@ -19,7 +19,15 @@ interface IParams {
   totalQuestions: number;
 }
 
-const ResultQuizz: React.FC = ({ navigation, route }) => {
+interface IRoute {
+  params: IParams;
+}
+
+type Props = {
+  route: IRoute;
+};
+
+const ResultQuizz: React.FC<Props> = ({ navigation, route }: Props) => {
   const { score, correctAnswers, totalQuestions } = route.params;
 
   const resetQuizz = () => {

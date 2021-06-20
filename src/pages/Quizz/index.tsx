@@ -60,7 +60,7 @@ const Quizz: React.FC = ({ navigation }) => {
     }
   };
 
-  const validateAnswer = selectedOption => {
+  const validateAnswer = (selectedOption: string) => {
     setCurrentOptionSelected(selectedOption);
     setIsOptionsDisabled(true);
     setShowModal(true);
