@@ -11,8 +11,8 @@ import QuestionQuizz from './QuestionQuizz';
 import OptionsQuizz from './OptionsQuizz';
 import NextQuestion from './NextQuestion';
 
-const Quizz: React.FC = ({ navigation }) => {
-  const questions = data.greysanatomy;
+const Quizz: React.FC = ({ navigation, route }) => {
+  const questions = data[route.params?.params?.id];
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentOptionSelected, setCurrentOptionSelected] = useState('');
   const [correctOption, setCorrectOption] = useState('');
@@ -42,11 +42,6 @@ const Quizz: React.FC = ({ navigation }) => {
   }, [questions, currentQuestionIndex, count]);
 
   const goBack = () => {
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Quizz' }],
-    });
-
     navigation.goBack();
   };
 

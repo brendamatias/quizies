@@ -1,29 +1,32 @@
+import COLORS from '../constants/theme';
+import questions from './QuizData';
+
 export default [
   {
     key: 'greysanatomy',
     name: 'Greys Anatomy',
-    totalQuestions: 3,
-    bgColorPrimary: '#DBFDE4',
-    bgColorSecondary: '#F1FFEF',
-    colorPrimary: '#1BBA70',
-    colorSecondary: '#58C39A',
+    totalQuestions: questions.greysanatomy.length,
+    bgColorPrimary: COLORS.greenBgPrimary,
+    bgColorSecondary: COLORS.greenBgSecondary,
+    colorPrimary: COLORS.greenColorPrimary,
+    colorSecondary: COLORS.greenColorSecondary,
   },
   {
     key: 'modernfamily',
     name: 'Modern Family',
-    totalQuestions: 3,
-    bgColorPrimary: '#FEE6F4',
-    bgColorSecondary: '#FFF5FD',
-    colorPrimary: '#FE6BBF',
-    colorSecondary: '#D991BC',
+    totalQuestions: questions.modernfamily.length,
+    bgColorPrimary: COLORS.pinkBgPrimary,
+    bgColorSecondary: COLORS.pinkBgSecondary,
+    colorPrimary: COLORS.pinkColorPrimary,
+    colorSecondary: COLORS.pinkColorSecondary,
   },
   {
     key: 'friends',
     name: 'Friends',
-    totalQuestions: 3,
-    bgColorPrimary: '#DDD4FD',
-    bgColorSecondary: '#F5F0FF',
-    colorPrimary: '#7F66FD',
-    colorSecondary: '#A092D9',
+    totalQuestions: questions.friends.length,
+    bgColorPrimary: COLORS.purpleBgPrimary,
+    bgColorSecondary: COLORS.purpleBgSecondary,
+    colorPrimary: COLORS.purpleColorPrimary,
+    colorSecondary: COLORS.purpleColorSecondary,
   },
 ];

@@ -33,7 +33,7 @@ const OptionsQuizz: React.FC<Props> = ({
             style={{
               fontSize: 20,
               color: `${
-                currentOptionSelected === option ? 'white' : '#6A6A6A'
+                currentOptionSelected === option ? 'white' : '#45494A'
               }`,
             }}
           >

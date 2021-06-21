@@ -33,12 +33,19 @@ const QuizzesList: React.FC<Props> = ({ navigation, series }: Props) => {
       data={series}
       renderItem={({ item }) => (
         <Card
-          onPress={() => navigation.navigate('Quizz')}
+          onPress={() =>
+            navigation.navigate('Quizz', {
+              screen: 'Dashboard',
+              params: { id: item.key },
+            })
+          }
           style={{ backgroundColor: `${item.bgColorSecondary}` }}
         >
           <CardContainer>
             <Circle bgColorPrimary={item.bgColorPrimary}>
-              <CircleText colorPrimary={item.colorPrimary}>G</CircleText>
+              <CircleText colorPrimary={item.colorPrimary}>
+                {item.name[0].toUpperCase()}
+              </CircleText>
             </Circle>
             <View>
               <Title>{item.name}</Title>

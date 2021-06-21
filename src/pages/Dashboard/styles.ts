@@ -23,7 +23,7 @@ export const ImageProfile = styled.View`
 export const ProfileText = styled.Text`
   color: #202020;
   font-weight: bold;
-  font-size: 20;
+  font-size: 20px;
 `;
 
 export const QuizzesHeader = styled.View`

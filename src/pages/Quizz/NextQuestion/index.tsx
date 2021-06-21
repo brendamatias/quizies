@@ -2,6 +2,10 @@ import React from 'react';
 
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import Button from '../../../components/Button';
+
+import { Container } from './styles';
+import COLORS from '../../../constants/theme';
 
 type Props = {
   showModal: boolean;
@@ -19,23 +23,16 @@ const NextQuestion: React.FC<Props> = ({
   return (
     <>
       {showModal && (
-        <View
-          style={{
-            flex: 1,
-            alignSelf: 'stretch',
-            justifyContent: 'flex-end',
-            margin: 0,
-          }}
-        >
+        <Container>
           <View
             style={{
-              backgroundColor: 'white',
+              backgroundColor: COLORS.white,
               paddingHorizontal: 25,
               paddingTop: 25,
               paddingBottom: 20,
               borderTopRightRadius: 18,
               borderTopLeftRadius: 18,
-              shadowColor: '#000',
+              shadowColor: COLORS.black,
               shadowOffset: {
                 width: 0,
                 height: 7,
@@ -90,20 +87,22 @@ const NextQuestion: React.FC<Props> = ({
               {correctOption}
             </Text>
 
-            <TouchableOpacity
+            <Button
               onPress={() => nextQuestion()}
+              text="Continuar"
               style={{
-                backgroundColor: `${correctAnswer ? 'green' : '#E2222F'}`,
+                backgroundColor: `${
+                  correctAnswer ? COLORS.success : COLORS.error
+                }`,
                 borderRadius: 50,
                 paddingVertical: 10,
                 alignItems: 'center',
                 marginBottom: 30,
+                width: '100%',
               }}
-            >
-              <Text style={{ color: 'white', fontSize: 18 }}>Continuar</Text>
-            </TouchableOpacity>
+            />
           </View>
-        </View>
+        </Container>
       )}
     </>
   );

@@ -47,7 +47,7 @@ export const Circle = styled.View<ICircle>`
 export const CircleText = styled.Text<ICircleText>`
   color: ${props => props.colorPrimary};
   font-weight: bold;
-  font-size: 19;
+  font-size: 19px;
 `;
 
 export const Title = styled.Text`
