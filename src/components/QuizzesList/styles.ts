@@ -1,15 +1,15 @@
 import styled from 'styled-components/native';
 import COLORS from '../../constants/theme';
 
-interface ICircle {
+interface CircleProps {
   bgColorPrimary: string;
 }
 
-interface ICircleText {
+interface CircleTextProps {
   colorPrimary: string;
 }
 
-interface ISubTitle {
+interface SubTitleProps {
   colorSecondary: string;
 }
 
@@ -34,7 +34,7 @@ export const CardContainer = styled.View`
   justify-content: center;
 `;
 
-export const Circle = styled.View<ICircle>`
+export const Circle = styled.View<CircleProps>`
   background-color: ${props => props.bgColorPrimary};
   height: 50px;
   width: 50px;
@@ -44,7 +44,7 @@ export const Circle = styled.View<ICircle>`
   margin-right: 20px;
 `;
 
-export const CircleText = styled.Text<ICircleText>`
+export const CircleText = styled.Text<CircleTextProps>`
   color: ${props => props.colorPrimary};
   font-weight: bold;
   font-size: 19px;
@@ -56,6 +56,6 @@ export const Title = styled.Text`
   font-size: 18px;
 `;
 
-export const SubTitle = styled.Text<ISubTitle>`
+export const SubTitle = styled.Text<SubTitleProps>`
   color: ${props => props.colorSecondary};
 `;

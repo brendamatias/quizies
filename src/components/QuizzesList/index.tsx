@@ -12,51 +12,80 @@ import {
   SubTitle,
 } from './styles';
 
-interface ISerie {
-  key: string;
+import COLORS from '../../constants/theme';
+
+interface SerieData {
+  id: string;
   name: string;
   totalQuestions: number;
-  bgColorPrimary: string;
-  bgColorSecondary: string;
-  colorPrimary: string;
-  colorSecondary: string;
 }
 
 type Props = {
-  series: ISerie[];
+  quizes: SerieData[];
   navigation: any;
 };
 
-const QuizzesList: React.FC<Props> = ({ navigation, series }: Props) => {
+const colors = [
+  {
+    bgColorPrimary: COLORS.greenBgPrimary,
+    bgColorSecondary: COLORS.greenBgSecondary,
+    colorPrimary: COLORS.greenColorPrimary,
+    colorSecondary: COLORS.greenColorSecondary,
+  },
+  {
+    bgColorPrimary: COLORS.pinkBgPrimary,
+    bgColorSecondary: COLORS.pinkBgSecondary,
+    colorPrimary: COLORS.pinkColorPrimary,
+    colorSecondary: COLORS.pinkColorSecondary,
+  },
+  {
+    bgColorPrimary: COLORS.purpleBgPrimary,
+    bgColorSecondary: COLORS.purpleBgSecondary,
+    colorPrimary: COLORS.purpleColorPrimary,
+    colorSecondary: COLORS.purpleColorSecondary,
+  },
+];
+
+const QuizzesList: React.FC<Props> = ({ navigation, quizes }: Props) => {
   return (
     <CardList
-      data={series}
-      renderItem={({ item }) => (
-        <Card
-          onPress={() =>
-            navigation.navigate('Quizz', {
-              screen: 'Dashboard',
-              params: { id: item.key },
-            })
-          }
-          style={{ backgroundColor: `${item.bgColorSecondary}` }}
-        >
-          <CardContainer>
-            <Circle bgColorPrimary={item.bgColorPrimary}>
-              <CircleText colorPrimary={item.colorPrimary}>
-                {item.name[0].toUpperCase()}
-              </CircleText>
-            </Circle>
-            <View>
-              <Title>{item.name}</Title>
-              <SubTitle colorSecondary={item.colorSecondary}>
-                {item.totalQuestions} questions
-              </SubTitle>
-            </View>
-          </CardContainer>
-          <Icon name="arrow-right" size={16} color="#C2D1C6" solid />
-        </Card>
-      )}
+      data={quizes}
+      renderItem={({ item, index }) => {
+        const currentColorData = index % 3;
+
+        return (
+          <Card
+            onPress={() =>
+              navigation.navigate('Quizz', {
+                screen: 'Dashboard',
+                params: { id: item.key },
+              })
+            }
+            style={{
+              backgroundColor: `${colors[currentColorData].bgColorSecondary}`,
+            }}
+          >
+            <CardContainer>
+              <Circle bgColorPrimary={colors[currentColorData].bgColorPrimary}>
+                <CircleText
+                  colorPrimary={colors[currentColorData].colorPrimary}
+                >
+                  {item.name[0].toUpperCase()}
+                </CircleText>
+              </Circle>
+              <View>
+                <Title>{item.name}</Title>
+                <SubTitle
+                  colorSecondary={colors[currentColorData].colorSecondary}
+                >
+                  {item.totalQuestions} questions
+                </SubTitle>
+              </View>
+            </CardContainer>
+            <Icon name="arrow-right" size={16} color="#C2D1C6" solid />
+          </Card>
+        );
+      }}
     />
   );
 };

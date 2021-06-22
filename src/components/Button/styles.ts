@@ -1,16 +1,18 @@
 import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 import COLORS from '../../constants/theme';
 
-export const WrapButton = styled.TouchableOpacity`
+export const WrapButton = styled(RectButton)`
   background-color: ${COLORS.primary};
-  width: 150px;
-  padding: 16px 0;
+  width: 100%;
+  height: 60px;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
+  margin-top: 8px;
 `;
 
 export const TextButton = styled.Text`
   color: ${COLORS.white};
-  font-size: 14px;
+  font-size: 18px;
 `;

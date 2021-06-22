@@ -13,18 +13,18 @@ import {
 import Button from '../../components/Button';
 import COLORS from '../../constants/theme';
 
-interface IParams {
+interface Params {
   score: number;
   correctAnswers: number;
   totalQuestions: number;
 }
 
-interface IRoute {
-  params: IParams;
+interface Route {
+  params: Params;
 }
 
 type Props = {
-  route: IRoute;
+  route: Route;
 };
 
 const ResultQuizz: React.FC<Props> = ({ navigation, route }: Props) => {
@@ -88,11 +88,12 @@ const ResultQuizz: React.FC<Props> = ({ navigation, route }: Props) => {
             <Button
               style={{ marginRight: 20, backgroundColor: '#24BCAD' }}
               onPress={() => resetQuizz()}
-              text="Try Again"
-            />
+            >
+              Try Again
+            </Button>
           )}
 
-          <Button onPress={() => completeQuizz()} text="Complete" />
+          <Button onPress={() => completeQuizz()}>Complete</Button>
         </Row>
       </Content>
     </Container>

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { View, Text, Image } from 'react-native';
 
-interface IQuestion {
+interface Question {
   image: any;
   question: string;
   options: string[];
@@ -12,7 +12,7 @@ interface IQuestion {
 
 type Props = {
   currentQuestionIndex: number;
-  questions: IQuestion[];
+  questions: Question[];
 };
 
 const QuestionQuizz: React.FC<Props> = ({

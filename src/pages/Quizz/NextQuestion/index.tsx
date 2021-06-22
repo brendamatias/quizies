@@ -89,7 +89,6 @@ const NextQuestion: React.FC<Props> = ({
 
             <Button
               onPress={() => nextQuestion()}
-              text="Continuar"
               style={{
                 backgroundColor: `${
                   correctAnswer ? COLORS.success : COLORS.error
@@ -100,7 +99,9 @@ const NextQuestion: React.FC<Props> = ({
                 marginBottom: 30,
                 width: '100%',
               }}
-            />
+            >
+              Continuar
+            </Button>
           </View>
         </Container>
       )}

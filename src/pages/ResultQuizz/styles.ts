@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import COLORS from '../../constants/theme';
 
-interface ISubTitle {
+interface SubTitleProps {
   fontSize: number;
   margin?: string;
 }
@@ -43,7 +43,7 @@ export const Title = styled.Text`
   color: ${COLORS.white};
 `;
 
-export const SubTitle = styled.Text<ISubTitle>`
+export const SubTitle = styled.Text<SubTitleProps>`
   font-size: ${props => `${props.fontSize}px`};
   margin: ${props => (props.margin ? props.margin : '0px')};
   font-weight: bold;

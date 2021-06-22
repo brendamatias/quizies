@@ -1,25 +1,18 @@
 import React from 'react';
+import { RectButtonProperties } from 'react-native-gesture-handler';
 
 import { WrapButton, TextButton } from './styles';
 
-type Props = {
-  text: string;
-  onPress: () => void;
-  style?: any;
-};
+interface ButtonProps extends RectButtonProperties {
+  children: string;
+}
 
-const defaultProps = {
-  style: '',
-};
-
-const Button: React.FC<Props> = ({ text, onPress, style }: Props) => {
+const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
   return (
-    <WrapButton onPress={onPress} style={style}>
-      <TextButton>{text}</TextButton>
+    <WrapButton {...rest}>
+      <TextButton>{children}</TextButton>
     </WrapButton>
   );
 };
-
-Button.defaultProps = defaultProps;
 
 export default Button;
